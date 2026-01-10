@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  attention-backend:
+    build: .
+    container_name: attention_monitor_backend
+    ports:
+      - "8765:8765"
+    volumes:
+      # Maps local 'reports' folder to container to persist data
+      - ./reports:/app/reports
+      
+      # Uncomment below if you have the model file in this folder
+      # - ./attention_classifier_model.h5:/app/attention_classifier_model.h5
+    environment:
+      - ENABLE_VOICE_ALERTS=False
+    restart: unless-stopped

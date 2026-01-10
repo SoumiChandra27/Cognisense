@@ -1,0 +1,7 @@
+# Ignore executable files
+*.exe
+
+# Ignore FFmpeg binaries explicitly
+backend/ffmpeg.exe
+backend/ffplay.exe
+backend/ffprobe.exe

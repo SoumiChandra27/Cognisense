@@ -1,0 +1,22 @@
+# Lightweight container to run the attention-monitor backend
+FROM python:3.10-slim
+
+# Install ffmpeg and system deps needed by some Python libs
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends ffmpeg libsndfile1 build-essential && \
+    rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+# Copy server and (expect) Attention_final.py into the container at build time
+COPY ./server.py /app/
+COPY ./Attention_final.py /app/
+
+# Install Python dependencies
+RUN pip install --no-cache-dir aiohttp numpy opencv-python mediapipe pydub webrtcvad fpdf2 Pillow
+
+# Expose port for websocket / REST
+EXPOSE 8765
+
+# Run the server
+CMD ["python", "server.py"]
