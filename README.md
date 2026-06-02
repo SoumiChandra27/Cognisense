@@ -1,8 +1,8 @@
-# Cognisense – AI-Powered Attention Monitoring System
+# Cognisense – Attention Monitoring System
 
 ## Overview
 
-Cognisense is an AI-powered attention monitoring system designed to analyze user engagement and focus in real time using computer vision and audio analysis. The system combines facial landmark detection, attention classification, speech activity monitoring, and report generation to provide insights into user attentiveness during online sessions, learning activities, and assessments.
+Cognisense is an attention monitoring system designed to analyze user engagement and focus in real time using computer vision and audio analysis. The system combines facial landmark detection, attention classification, speech activity monitoring, and report generation to provide insights into user attentiveness during online sessions, learning activities, and assessments.
 
 ## Features
 
@@ -31,7 +31,7 @@ Cognisense is an AI-powered attention monitoring system designed to analyze user
 * AioHTTP
 * WebSockets
 
-### AI & Computer Vision
+### Computer Vision
 
 * OpenCV
 * MediaPipe
